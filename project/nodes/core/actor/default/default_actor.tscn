@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://d3oap41benpyt"]
+
+[ext_resource type="Texture2D" uid="uid://cvacwb235dowr" path="res://project/nodes/core/actor/default/icon.svg" id="1_4d4tu"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yuu01"]
+radius = 23.730835
+height = 136.0
+
+[node name="Actor_scene" type="Node2D" unique_id=561918373]
+y_sort_enabled = true
+
+[node name="Actor" type="CharacterBody2D" parent="." unique_id=1915931439]
+
+[node name="Sprite2D" type="Sprite2D" parent="Actor" unique_id=496107160]
+y_sort_enabled = true
+texture = ExtResource("1_4d4tu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actor" unique_id=1605933126]
+position = Vector2(0, 43)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_yuu01")
+
+[node name="Camera2D" type="Camera2D" parent="Actor" unique_id=808519420]
+enabled = false

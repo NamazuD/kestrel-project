@@ -1,0 +1,23 @@
+ # Bootstrap.gd
+extends Node
+
+var subscription_registry: Dictionary = {}
+
+func _ready():
+	print("Bootstrap start")
+	# Running the alias functions as a function local limited scope object
+	#Reasoning: Don't want this available while the game is running.
+	var _init_aliases_script = load("res://project/boot/_init_aliases.gd")
+	var _init_aliases = _init_aliases_script.new()
+	var result = _init_aliases._init_aliases()
+
+	if result.error:
+		push_error(result.error)
+		return
+
+	#Written to persistant global variables.
+	subscription_registry.merge(result.subscription_aliases)
+
+	print("Bootstrap complete. Loading world.")
+	
+	get_tree().change_scene_to_file.call_deferred("res://project/nodes/core/map/default/default_world.tscn")

@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bt6745eeywk1o"]
+
+[ext_resource type="PackedScene" uid="uid://d3oap41benpyt" path="res://project/core/actor/default/default_actor.tscn" id="1_1lylk"]
+[ext_resource type="Script" uid="uid://d3gb4hlmjsqud" path="res://project/enitities/player_characters/pc_movement_vars.gd" id="2_sejvk"]
+[ext_resource type="Resource" uid="uid://bldgsebu43sbu" path="res://project/enitities/player_characters/pc_movements.tres" id="3_t76fm"]
+
+[node name="Actor_scene" unique_id=561918373 instance=ExtResource("1_1lylk")]
+
+[node name="Camera2D" parent="Actor" parent_id_path=PackedInt32Array(1915931439) index="2" unique_id=808519420]
+enabled = true
+
+[node name="movement_vars" type="Node" parent="Actor" parent_id_path=PackedInt32Array(1915931439) index="3" unique_id=1242313919]
+script = ExtResource("2_sejvk")
+move_data = ExtResource("3_t76fm")

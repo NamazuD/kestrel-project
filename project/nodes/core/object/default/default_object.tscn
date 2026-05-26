@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cjlylsyscvdla"]
+
+[ext_resource type="Texture2D" uid="uid://cvacwb235dowr" path="res://project/nodes/core/actor/default/icon.svg" id="1_j2o23"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_git24"]
+radius = 84.0
+
+[node name="Obstacle Scene" type="Node2D" unique_id=1445938448]
+y_sort_enabled = true
+
+[node name="Obstacle" type="StaticBody2D" parent="." unique_id=150346629]
+
+[node name="Sprite2D" type="Sprite2D" parent="Obstacle" unique_id=1947686369]
+texture = ExtResource("1_j2o23")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Obstacle" unique_id=807126694]
+y_sort_enabled = true
+shape = SubResource("CircleShape2D_git24")

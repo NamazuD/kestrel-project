@@ -1,0 +1,29 @@
+[gd_resource type="Resource" format=3 uid="uid://cxqhwc4brwovj"]
+
+[resource]
+metadata/subscription_names = {
+"actor_movement": null,
+"calc_movement": null,
+"event_handler": null,
+"interactable": null,
+"npc_text": null,
+"obj_movement": null,
+"overlay_text": null,
+"story_text": null,
+"ui_inputs": null,
+"ui_interact": null,
+"ui_static": null
+}
+metadata/sub_names = {
+"actor_movement": null,
+"calc_movement": null,
+"event_handler": null,
+"interactable": null,
+"npc_text": null,
+"obj_movement": null,
+"overlay_text": null,
+"story_text": null,
+"ui_inputs": null,
+"ui_interact": null,
+"ui_static": null
+}

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="MoveResource" format=3 uid="uid://bldgsebu43sbu"]
+
+[ext_resource type="Script" uid="uid://curkh3piqrvny" path="res://project/core/actor/default/def_move_vars.gd" id="1_abc12"]
+
+[resource]
+script = ExtResource("1_abc12")
+max_speed = 250.0
+acceleration = 1050.0
+friction = 850.0

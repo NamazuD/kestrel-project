@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cvnj1b25nqxpg"]
+
+[ext_resource type="PackedScene" uid="uid://cjlylsyscvdla" path="res://project/nodes/core/object/default/default_object.tscn" id="2_1lwx6"]
+[ext_resource type="PackedScene" uid="uid://d3oap41benpyt" path="res://project/nodes/core/actor/default/default_actor.tscn" id="2_dsnr4"]
+[ext_resource type="Script" uid="uid://bpxinfiedk431" path="res://project/nodes/dummy_test.gd" id="3_ra1hx"]
+
+[node name="Test World" type="Node2D" unique_id=1980535911]
+process_mode = 1
+y_sort_enabled = true
+
+[node name="Obsticle Scene4" parent="." unique_id=1445938448 instance=ExtResource("2_1lwx6")]
+position = Vector2(-482, 414)
+
+[node name="Obsticle Scene3" parent="." unique_id=1677522440 instance=ExtResource("2_1lwx6")]
+position = Vector2(97, 300)
+
+[node name="Obsticle Scene2" parent="." unique_id=1184492082 instance=ExtResource("2_1lwx6")]
+position = Vector2(-116, -117)
+
+[node name="Obsticle Scene" parent="." unique_id=380185011 instance=ExtResource("2_1lwx6")]
+position = Vector2(-709, -118)
+
+[node name="Actor_scene" parent="." unique_id=561918373 instance=ExtResource("2_dsnr4")]
+position = Vector2(-417, 46)
+
+[node name="Actor_Controller" type="Node" parent="." unique_id=790084111 groups=["Player_Input"]]
+
+[node name="Dummy_Test" type="Node" parent="." unique_id=1181513283]
+script = ExtResource("3_ra1hx")

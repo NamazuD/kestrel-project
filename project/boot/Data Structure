@@ -1,0 +1,34 @@
+
+    "PIPELINE_NAME1": {
+        "DOMAIN_NAME_1": {
+            "Path": "directory path",
+            "Scripts": [list of script names]
+        },
+        "DOMAIN_NAME_2": {
+            "Path": "directory path",
+            "Scripts": [list of script names]
+        },
+    },
+    "PIPELINE_NAME2": {
+        "DOMAIN_NAME_1": {
+            "Path": "directory path",
+            "Scripts": [list of script names]
+        },
+        "DOMAIN_NAME_2": {
+            "Path": "directory path",
+            "Scripts": [list of script names]
+        }
+    }
+}
+
+
+{
+    "script_name_1": {
+        "Directory": "Directory_Path",
+        "Pipeline": "PIPELINE_NAME"
+    }
+    "script_name_2": {
+        "Directory": "Directory_Path",
+        "Pipeline": "PIPELINE_NAME"
+    }
+}

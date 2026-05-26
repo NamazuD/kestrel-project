@@ -1,0 +1,57 @@
+Needs updating because of new ideas, but overall similar.
+
+
+
+res://
+├── core/
+│   └── actor/
+│       ├── actor_base.tscn       # The "Empty" root scene
+│       │    └── intent_reciever.gd         # Intent Reciever script
+│       ├── pc_base.tscn       # Inherits Actor_Base
+│       │    └── tres files                 # Includes data specific to player characters
+│       ├── npc_base.tscn       # Inherits Actor_Base
+│       │    └── tres files                 # Includes data specific to non-player characters
+│       └── mob_base.tscn       # Inherits Actor_Base
+│           └── tres files                  # Includes data specific to mob characters
+│
+├── resources/
+│   ├── templates/                # Resource scripts (.gd)
+│   │   └── movement_stats.gd
+│   └── data/                     # Actual data struct files (.tres)
+│       └── defaults
+│           └── actor_default_movement.tres
+│
+├── systems/
+│   └── movement/                 # The "Hidden" logic scripts
+│       ├── input_handler.gd      # Processes Keyboard/Controller
+│       └── ai_driver.gd          # Processes pathfinding intent
+│
+└── entities/                     # Inherited scenes
+    ├── player_characters/
+    │    ├── player_character_1
+    │    │   └── player_character_1.tscn             # Inherits PC_Base
+    │    │      └── tres files                 # Includes data specific to this PC
+    │    ├── player_character_2
+    │    │   └── player_character_2.tscn             # Inherits PC_Base
+    │    │      └── tres files                 # Includes data specific to this PC
+    │    └── player_character_3
+    │       └── player_character_3.tscn          # Inherits PC_Base
+    │           └── tres files                 # Includes data specific to this PC
+    └── zones
+        ├── zone 1
+        │    ├── npcs/
+        │    │   ├── npc_1.tscn             # Inherits NPC_Base
+        │    │   │    └── tres files                 # Includes data specific to this NPC
+        │    │   ├── npc_2.tscn             # Inherits NPC_Base
+        │    │   │    └── tres files                 # Includes data specific to this NPC
+        │    │   └── npc_3.tscn             # Inherits NPC_Base
+        │    │       └── tres files                 # Includes data specific to this NPC
+        │    └── mobs/
+        │        ├── mob_1.tscn             # Inherits MOB_Base
+        │        │    └── tres files                 # Includes data specific to this MOB
+        │        ├── mob_2.tscn             # Inherits MOB_Base
+        │        │    └── tres files                 # Includes data specific to this MOB
+        │        └── mob_3.tscn             # Inherits NPC_Base
+        │           └── tres files                 # Includes data specific to this MOB
+        ├── zone 2
+        │    ├── npcs/  ......
