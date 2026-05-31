@@ -2,7 +2,7 @@
 ## Path: /project/boot/helpers/task_helper.gd
 ## Project: Project Kestral
 ##
-## Stateful manager for interacting with task execution lanes.
+## Lightweight class for interacting with task execution lanes.
 ## Provides controlled access to enqueue, reorder, and drain lane workloads.
 ## Maintains minimal execution state (current_lane_index)
 ## Operates on structures defined in InitTaskLanes.
