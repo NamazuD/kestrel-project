@@ -2,7 +2,7 @@
 ## Path: /project/boot/_init_task_lanes.gd
 ## Project: Project Kestral
 ##
-## GD Auto loaded Singleton - Initializes on engine start (_ready)
+## Dynamic Boot Module - Initialized by BootAutoload
 ## Creates: 
 ##  - Global lanes Dictionary (execution lanes)
 ##  - Global lane_order Array (execution order)
@@ -55,7 +55,7 @@ func _ready() -> void:
 func _initialize_job_lanes() -> void:
 
 	# 1. Populate lanes and lane_order
-	var master_registry = InitData.directory_structure
+	var master_registry = BootAutoload.modules.InitData.node.directory_structure
 	for pipeline_name in master_registry:
 
 		# 1.1 For each pipeline name populate a dictionary entry.
@@ -67,5 +67,3 @@ func _initialize_job_lanes() -> void:
 		# 1.2 If lane order is not defined use default order
 		if not lane_order.has(lane_name):
 			lane_order.append(lane_name)
-
-

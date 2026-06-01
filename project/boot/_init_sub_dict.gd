@@ -2,7 +2,7 @@
 ## Path: /project/boot/_init_sub_dict.gd
 ## Project: Project Kestral
 ##
-## GD Auto loaded Singleton - Initializes on engine start (_ready)
+## Dynamic Boot Module - Initialized by BootAutoload
 ## Creates global dictionary script_registry
 ## Structure defined in: _derive_script_registry()
 ## Consumed by:
@@ -43,7 +43,7 @@ func _ready() -> void:
 ##
 func _derive_script_registry() -> void:
 	# 1.  Fetch the master directory_structure created by _init_data.gd singleton
-	var directory_structure = InitData.directory_structure
+	var directory_structure = BootAutoload.modules.InitData.node.directory_structure
 	for pipeline_name in directory_structure:
 
 		# 1.1. Create an initial Dictionary to populate

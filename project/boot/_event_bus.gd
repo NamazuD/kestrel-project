@@ -2,14 +2,14 @@
 ## Path: /project/boot/_event_bus.gd
 ## Project: Project Kestral
 ##
-## GD Auto loaded Singleton - Initializes on engine start (_ready)
+## Dynamic Boot Module - Initialized by BootAutoload
 ## Routes a front end script level event calls to job based execution lanes.
 ## Lane queues executed in order once per frame
 ## Uses: InitSubDict.script_registry
 ## Consumed by: External developer scripts via EventBus.start_event(script_name, payload)"
 ## Outputs: TaskLaneManager.enqueue_task(target_lane, event_package)
 ##==========
-
+class_name EventBus
 extends Node
 
 ## --- Start Event ---
@@ -26,14 +26,14 @@ extends Node
 ##     			"script": String (script_path),
 ##     			"data": Variant (payload)
 ## 	})
-func start_event(script_name: String, payload: Dictionary) -> void:
+static func start_event(script_name: String, payload: Dictionary) -> void:
 
 	# 1. 'gd' added to the script name so developers can use just the script name.
 	#	# script_name should be provided without ".gd"
 	script_name = script_name + ".gd"
 	
 	# 2. Lookup the registry entry
-	var entry = InitSubDict.script_registry.get(script_name)
+	var entry = BootAutoload.modules.InitSubDict.node.script_registry.get(script_name)
 	if not entry:
 		push_error("EventBus: No registry entry for " + script_name + "Note: The file extention 'gd' is not required when doing a script call.")
 		#push_error("Registry ", InitSubDict.script_registry)
@@ -51,4 +51,4 @@ func start_event(script_name: String, payload: Dictionary) -> void:
 	}
 		
 	# 5. Send to assigned execution lane.
-	TaskLaneRunner.task_helper.enqueue_task(target_lane, event_package)
+	BootAutoload.modules.TaskLaneRunner.node.task_helper.enqueue_task(target_lane, event_package)

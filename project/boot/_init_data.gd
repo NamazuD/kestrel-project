@@ -2,7 +2,7 @@
 ## Path: /project/boot/_init_data.gd
 ## Project: Project Kestral
 ##
-## GD Auto loaded Singleton - Initializes on engine start (_ready)
+## Dynamic Boot Module - Initialized by BootAutoload
 ## Creates global dictionary directory_structure
 ## Structure defined in: _generate_directory()
 ## Consumed by:

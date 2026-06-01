@@ -17,11 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-InitData="*uid://d2jiouekgufc6"
-InitSubDict="*uid://b0bfq3slbsnkl"
-InitTaskLanes="*uid://dqptuhnv2pvlj"
-TaskLaneRunner="*uid://c6j3cdxcmv2md"
-EventBus="*uid://bh4git7g8xbp1"
+BootAutoload="*uid://b4yumuclat5du"
 
 [physics]
 
