@@ -16,7 +16,7 @@ var task_helper = TASKHELPER.new()
 func _process(_delta: float) -> void:
 	# Safety Guard: If the bootstrapper hasn't initialized the lane system yet,
 	# skip this frame's execution entirely.
-	if not BootAutoload.modules.InitTaskLanes:
+	if not BootAutoload.InitTaskLanes:
 		return
 		
 	# Use the instance to drain lanes safely once the data is present

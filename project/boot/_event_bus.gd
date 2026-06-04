@@ -33,7 +33,7 @@ static func start_event(script_name: String, payload: Dictionary) -> void:
 	script_name = script_name + ".gd"
 	
 	# 2. Lookup the registry entry
-	var entry = BootAutoload.modules.InitSubDict.node.script_registry.get(script_name)
+	var entry = BootAutoload.InitSubDict.script_registry.get(script_name)
 	if not entry:
 		push_error("EventBus: No registry entry for " + script_name + "Note: The file extention 'gd' is not required when doing a script call.")
 		#push_error("Registry ", InitSubDict.script_registry)
@@ -51,4 +51,4 @@ static func start_event(script_name: String, payload: Dictionary) -> void:
 	}
 		
 	# 5. Send to assigned execution lane.
-	BootAutoload.modules.TaskLaneRunner.node.task_helper.enqueue_task(target_lane, event_package)
+	BootAutoload.TaskLaneRunner.task_helper.enqueue_task(target_lane, event_package)

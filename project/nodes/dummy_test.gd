@@ -21,6 +21,6 @@ func _unhandled_input(event: InputEvent) -> void:
 			EventBus.start_event("actor_movement", test_payload)
 			EventBus.start_event("event_handler", test_payload)
 			EventBus.start_event("calc_movement", test_payload)
-			get_tree().get_root().print_tree_pretty()
+			#get_tree().get_root().print_tree_pretty()
 			
 			

@@ -43,7 +43,8 @@ func _ready() -> void:
 ##
 func _derive_script_registry() -> void:
 	# 1.  Fetch the master directory_structure created by _init_data.gd singleton
-	var directory_structure = BootAutoload.modules.InitData.node.directory_structure
+	#var directory_structure = BootAutoload.modules.InitData.node.directory_structure
+	var directory_structure = BootAutoload.InitData.directory_structure
 	for pipeline_name in directory_structure:
 
 		# 1.1. Create an initial Dictionary to populate

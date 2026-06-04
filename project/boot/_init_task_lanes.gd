@@ -55,7 +55,7 @@ func _ready() -> void:
 func _initialize_job_lanes() -> void:
 
 	# 1. Populate lanes and lane_order
-	var master_registry = BootAutoload.modules.InitData.node.directory_structure
+	var master_registry = BootAutoload.InitData.directory_structure
 	for pipeline_name in master_registry:
 
 		# 1.1 For each pipeline name populate a dictionary entry.

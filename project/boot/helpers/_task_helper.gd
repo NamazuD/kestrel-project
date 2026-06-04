@@ -42,7 +42,7 @@ static var time_budget_us: int = 5000
 func set_lane_order(new_order: Array) -> void:
 
 	# 1. Reference owning system
-	var lane_system = BootAutoload.modules.InitTaskLanes.node
+	var lane_system = BootAutoload.InitTaskLanes
 	var validated_order: Array = []
 
 	# 2. Validate and build new lane order
@@ -76,7 +76,7 @@ func set_lane_order(new_order: Array) -> void:
 func drain_lanes() -> void:
 	
 	# 1. Reference lane system
-	var lane_system = BootAutoload.modules.InitTaskLanes.node
+	var lane_system = BootAutoload.InitTaskLanes
 	if lane_system.lane_order.is_empty():
 		return
 
@@ -143,7 +143,7 @@ func enqueue_task(lane_name: String, task: Dictionary) -> void:
 	var upper_lane = lane_name.to_upper()
 
 	# 2. Validate lane exists
-	if not BootAutoload.modules.InitTaskLanes.node.lanes.has(upper_lane):
+	if not BootAutoload.InitTaskLanes.lanes.has(upper_lane):
 		push_error("[TaskLaneManager] Invalid lane: " + upper_lane)
 		return
 
@@ -163,4 +163,4 @@ func enqueue_task(lane_name: String, task: Dictionary) -> void:
 		return
 
 	# 5. Append task to queue
-	BootAutoload.modules.InitTaskLanes.node.lanes[upper_lane]["queue"].append(task)
+	BootAutoload.InitTaskLanes.lanes[upper_lane]["queue"].append(task)
